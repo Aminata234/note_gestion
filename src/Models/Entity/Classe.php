@@ -1,15 +1,33 @@
 <?php
 
+
+
+
 class Classe
 {
-    public int $id;
-    public string $nomClasse;
+    private int $id;
+    private string $nom;
+    private Etablissement $etablissement;
 
-        public function __construct(
-            int $id = 0,
-            string $nomClasse = ""
-        ) {
-            $this->id = $id;
-            $this->nomClasse = $nomClasse;
-        }
+    public function __construct(string $nom, Etablissement $etablissement)
+    {
+        $this->nom = $nom;
+        $this->etablissement = $etablissement;
+    }
+    public function getId(): int
+    {
+        return $this->id;
+    }
+    public function getNom(): string
+    {
+        return $this->nom;
+    }
+    public function getEtablissement(): Etablissement
+    {
+        return $this->etablissement;
+    }
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
 }

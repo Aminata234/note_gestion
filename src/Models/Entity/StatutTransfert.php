@@ -1,11 +1,13 @@
 <?php
 
 
-class Role
+
+
+
+class StatutTransfert
 {
     private int $id;
     private string $nom;
-
 
     public function __construct(string $nom)
     {
@@ -15,7 +17,7 @@ class Role
     {
         return $this->id;
     }
-    public function getNom(): string
+    public function getnom(): string
     {
         return $this->nom;
     }
@@ -23,7 +25,7 @@ class Role
     {
         $this->id = $id;
     }
-    public function setNom(string $nom): void
+    public function setnom(string $nom): void
     {
         $this->nom = $nom;
     }

@@ -1,21 +1,83 @@
 <?php
 
+
+
 class Inscription
 {
-    public int $id;
-    public int $annee_id;
-    public int $eleve_id;
-    public int $classe_id;
+    private int $id;
+    private Eleve $eleve;
+    private Classe $classe;
+    private Annescolaire $annescolaire;
+    private Utilisateur $utilisateur;
+    private StatutInscription $statut;
 
-        public function __construct(
-            int $id = 0,
-            int $annee_id = 0,
-            int $eleve_id = 0,
-            int $classe_id = 0
-        ) {
-            $this->id = $id;
-            $this->annee_id = $annee_id;
-            $this->eleve_id = $eleve_id;
-            $this->classe_id = $classe_id;
-        }
+    public function __construct(Eleve $eleve, Classe $classe, Annescolaire $annescolaire, Utilisateur $utilisateur, StatutInscription $statut = StatutInscription::EN_ATTENTE)
+    {
+        $this->eleve = $eleve;
+        $this->classe = $classe;
+        $this->annescolaire = $annescolaire;
+        $this->utilisateur = $utilisateur;
+        $this->statut = $statut;
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function getEleve(): Eleve
+    {
+        return $this->eleve;
+    }
+
+    public function getClasse(): Classe
+    {
+        return $this->classe;
+    }
+
+    public function getAnnescoalire(): Annescolaire
+    {
+        return $this->annescolaire;
+    }
+
+    public function getUtilisateur(): Utilisateur
+    {
+        return $this->utilisateur;
+    }
+
+    public function getStatut(): StatutInscription
+    {
+        return $this->statut;
+    }
+
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+
+    public function setEleve(Eleve $eleve): void
+    {
+        $this->eleve = $eleve;
+    }
+
+    public function setClasse(Classe $classe): void
+    {
+        $this->classe = $classe;
+    }
+
+    public function setAnnescolaire(Annescolaire $annescolaire): void
+    {
+        $this->annescolaire = $annescolaire;
+    }
+
+    public function setUtilisateur(Utilisateur $utilisateur): void
+    {
+        $this->utilisateur = $utilisateur;
+    }
+
+    public function setStatut(StatutInscription $statut): void
+    {
+        $this->statut = $statut;
+    }
+
 }
